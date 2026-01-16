@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Retell Chat Widget Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- =======================
+         CSS
+    ======================== -->
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 60px;
+            background-color: #f9fafb;
+            color: #111827;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 14px 28px;
+            font-size: 16px;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+    </style>
+
+    <!-- =======================
+         Retell Chat Widget
+         (must be in <head>)
+    ======================== -->
+    <script
+        id="retell-widget"
+        src="https://dashboard.retellai.com/retell-widget.js"
+        type="module"
+        data-public-key="public_key_c47e92eeb33d12413353a"
+        data-agent-id="agent_54ae9898d491a6d502b0818877"
+        data-title="Assistant"
+        data-bot-name="Web Assistant"
+        data-popup-message="Hi! How can I help?"
+        data-color="#2563eb"
+        data-show-ai-popup="true"
+        data-show-ai-popup-time="5"
+        data-auto-open="false"
+        data-dynamic='{
+            "page": "home",
+            "channel": "web"
+        }'
+    ></script>
+    <style>
+  :root {
+    --retell-chat-width: 420px;
+    --retell-chat-height: 600px;
+  }
+</style>
+</head>
+
+<body>
+
+    <!-- =======================
+         HTML
+    ======================== -->
+    <h1>Retell AI Chat Widget</h1>
+    <p>Simple standalone HTML + CSS + JS example</p>
+
+    <button id="openChatBtn">Open Chat</button>
+
+    <!-- =======================
+         JavaScript
+    ======================== -->
+    <script>
+        document.getElementById("openChatBtn").addEventListener("click", function () {
+            if (window.RetellWidget) {
+                window.RetellWidget.open();
+            } else {
+                console.warn("Retell widget not loaded yet.");
+            }
+        });
+    </script>
+
+</body>
+</html>
